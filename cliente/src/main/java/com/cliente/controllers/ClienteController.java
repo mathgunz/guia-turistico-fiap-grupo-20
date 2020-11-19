@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 public class ClienteController {
 
     @GetMapping()
-    public ResponseEntity abrirChamado() {
+    public ResponseEntity teste() {
 
         return ResponseEntity.ok("Funcionando");
     }
