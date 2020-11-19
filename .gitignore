@@ -24,3 +24,7 @@ hs_err_pid*
 /cliente/.gradle/
 /cliente/build/
 /.idea/
+/guia/.gradle/
+/guia/build/
+/controle-guia-turistico/build/
+/controle-guia-turistico/.gradle/
