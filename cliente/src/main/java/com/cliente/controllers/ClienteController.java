@@ -1,5 +1,7 @@
 package com.cliente.controllers;
 
+import com.cliente.repositories.entities.ClienteEntity;
+import com.cliente.services.ClienteService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -7,9 +9,26 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class ClienteController {
 
-    @GetMapping()
-    public ResponseEntity teste() {
+    private final ClienteService clienteService;
 
-        return ResponseEntity.ok("Funcionando");
+    public ClienteController(final ClienteService clienteService) {
+        this.clienteService = clienteService;
     }
+
+    @GetMapping("{id}")
+    public ResponseEntity getById(@PathVariable("id") Long id) {
+
+        ClienteEntity cliente = clienteService.get(id);
+        return ResponseEntity.ok().body(cliente);
+
+    }
+
+    @PostMapping
+    public ResponseEntity criar(ClienteEntity cliente){
+
+        ClienteEntity clienteEntity = clienteService.criar(cliente);
+        return ResponseEntity.ok().body(clienteEntity);
+
+    }
+
 }

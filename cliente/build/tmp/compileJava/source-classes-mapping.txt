@@ -1,4 +1,8 @@
+com/cliente/repositories/entities/ClienteEntity.java
+ com.cliente.repositories.entities.ClienteEntity
 com/cliente/controllers/ClienteController.java
  com.cliente.controllers.ClienteController
+com/cliente/repositories/entities/EnderecoEntity.java
+ com.cliente.repositories.entities.EnderecoEntity
 com/cliente/ClienteApplication.java
  com.cliente.ClienteApplication
