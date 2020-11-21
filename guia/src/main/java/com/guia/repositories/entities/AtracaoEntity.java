@@ -1,9 +1,9 @@
 package com.guia.repositories.entities;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
+@Entity(name = "atracao")
+@Table(name="atracao",schema = "guia_fiap")
 public class AtracaoEntity {
 
     private String nome;
