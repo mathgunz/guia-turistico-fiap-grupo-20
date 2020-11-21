@@ -2,8 +2,8 @@ package com.cliente.repositories.entities;
 
 import javax.persistence.*;
 
-@Entity
-@Table
+@Entity(name = "endereco")
+@Table(name="endereco",schema = "cliente_fiap")
 public class EnderecoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

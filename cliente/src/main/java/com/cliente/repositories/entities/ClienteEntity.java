@@ -2,8 +2,8 @@ package com.cliente.repositories.entities;
 
 import javax.persistence.*;
 
-@Entity
-@Table
+@Entity(name = "cliente")
+@Table(name="cliente",schema = "cliente_fiap")
 public class ClienteEntity {
 
     @Id

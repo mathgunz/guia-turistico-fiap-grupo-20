@@ -6,5 +6,5 @@
     <file type="web" url="file://$PROJECT_DIR$/controle-guia-turistico" />
     <file type="web" url="file://$PROJECT_DIR$/guia" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" default="false" project-jdk-name="14" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="14" project-jdk-type="JavaSDK" />
 </project>
