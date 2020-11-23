@@ -66,4 +66,17 @@ public class ClienteEntity {
     public EnderecoEntity getEndereco() {
         return endereco;
     }
+
+    public ClienteEntity() {
+        //Hibernate
+    }
+
+    public ClienteEntity(Long id, String nome, String cpf, Long telefone, String email, EnderecoEntity endereco) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.email = email;
+        this.endereco = endereco;
+    }
 }
