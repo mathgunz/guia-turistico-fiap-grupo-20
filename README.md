@@ -14,6 +14,3 @@ sudo docker start fiap-postgres
 
 - se a senha não for 1234, necessario alterar na resources/application.yml de cada projeto e alterar a senha.
 a senha.
-
-
-
