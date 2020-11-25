@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity(name = "roteiro")
-@Table(name = "roteiro", schema = "contratacao_guia_fiap")
+@Table(name = "roteiro", schema = "controle_guia_fiap")
 public class RoteiroEntity {
 
     @Id
@@ -20,7 +20,7 @@ public class RoteiroEntity {
 
     @ManyToOne
     @JoinColumn(name="contratacao_id", nullable=false)
-    private ContratacaoGuiaTuristicoEntity contratacao;
+    private ControleGuiaTuristicoEntity controle;
 
     public Long getId() {
         return id;
@@ -54,12 +54,12 @@ public class RoteiroEntity {
         this.criacao = criacao;
     }
 
-    public ContratacaoGuiaTuristicoEntity getContratacao() {
-        return contratacao;
+    public ControleGuiaTuristicoEntity getControle() {
+        return controle;
     }
 
-    public void setContratacao(ContratacaoGuiaTuristicoEntity contratacao) {
-        this.contratacao = contratacao;
+    public void setControle(ControleGuiaTuristicoEntity controle) {
+        this.controle = controle;
     }
 
     public List<RoteiroAtracao> getAtracoes() {

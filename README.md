@@ -17,5 +17,5 @@ a senha.
 
 criar os schemas no postgre:
 cliente_fiap
-contratacao_guia_fiap
+controle_guia_fiap
 guia_fiap
