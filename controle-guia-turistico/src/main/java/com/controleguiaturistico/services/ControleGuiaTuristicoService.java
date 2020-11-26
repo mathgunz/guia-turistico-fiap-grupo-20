@@ -9,6 +9,7 @@ import com.controleguiaturistico.repositories.entities.GuiaEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class ControleGuiaTuristicoService {
@@ -30,5 +31,13 @@ public class ControleGuiaTuristicoService {
         controleGuia.setCriacao(new Date());
 
         return repository.save(controleGuia);
+    }
+
+    public List<ControleGuiaTuristicoEntity> consultarByGuia(Long guiaId, ControleGuiaStatus status) {
+
+
+        List<ControleGuiaTuristicoEntity> agendamentos = this.repository.findAllByGuiaIdAndStatus(guiaId, status);
+
+        return agendamentos;
     }
 }

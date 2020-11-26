@@ -18,6 +18,10 @@ public class GuiaEntity {
         this.nome = guia.getNome();
     }
 
+    public GuiaEntity(Long id) {
+        this.id = id;
+    }
+
     public GuiaEntity() {
     }
 
