@@ -1,4 +1,4 @@
-package com.cliente.services.entities;
+package com.cliente.services.dtos;
 
 import java.io.Serializable;
 

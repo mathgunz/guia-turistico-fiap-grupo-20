@@ -3,7 +3,7 @@ package com.cliente.services;
 import com.cliente.repositories.ClienteRepository;
 import com.cliente.repositories.entities.ClienteEntity;
 import com.cliente.repositories.entities.ClienteMapper;
-import com.cliente.services.entities.Cliente;
+import com.cliente.services.dtos.Cliente;
 import com.cliente.usecases.ClienteUseCase;
 import org.springframework.stereotype.Service;
 

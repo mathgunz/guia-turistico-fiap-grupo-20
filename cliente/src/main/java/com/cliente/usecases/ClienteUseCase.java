@@ -1,7 +1,7 @@
 package com.cliente.usecases;
 
 import com.cliente.repositories.entities.ClienteEntity;
-import com.cliente.services.entities.Cliente;
+import com.cliente.services.dtos.Cliente;
 
 public interface ClienteUseCase {
 

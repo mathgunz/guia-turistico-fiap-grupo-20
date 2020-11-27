@@ -1,6 +1,6 @@
 package com.cliente.repositories.entities;
 
-import com.cliente.services.entities.Endereco;
+import com.cliente.services.dtos.Endereco;
 
 public class EnderecoMapper implements BaseMapper<EnderecoEntity, Endereco> {
     @Override

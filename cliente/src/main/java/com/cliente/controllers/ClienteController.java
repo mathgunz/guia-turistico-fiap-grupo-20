@@ -1,7 +1,7 @@
 package com.cliente.controllers;
 
 import com.cliente.repositories.entities.ClienteEntity;
-import com.cliente.services.entities.Cliente;
+import com.cliente.services.dtos.Cliente;
 import com.cliente.usecases.ClienteUseCase;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,6 +1,6 @@
 package com.cliente.repositories.entities;
 
-import com.cliente.services.entities.Cliente;
+import com.cliente.services.dtos.Cliente;
 
 public class ClienteMapper implements BaseMapper<ClienteEntity, Cliente> {
 
