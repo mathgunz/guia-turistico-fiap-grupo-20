@@ -16,11 +16,10 @@ public class ClienteController {
         this.clienteUseCase = clienteUseCase;
     }
 
-    //METODO BUSCAR ID USUARIO
     @GetMapping("{id}")
     public ResponseEntity get(@PathVariable("id") Long id) throws Exception {
         Cliente cliente = clienteUseCase.getById(id);
-        return ResponseEntity.ok().body(cliente);
+        return cliente != null ? ResponseEntity.ok().body(cliente) : ResponseEntity.notFound().build();
     }
 
     @PostMapping
@@ -38,7 +37,7 @@ public class ClienteController {
     @DeleteMapping("{id}")
     public ResponseEntity delete(@PathVariable("id") Long id) throws Exception {
         ClienteEntity clienteEntity = clienteUseCase.deletar(id);
-        return ResponseEntity.ok().body("Cliente " + clienteEntity.getNome() + " deletado com sucesso");
+        return clienteEntity != null ? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
     }
 
 }

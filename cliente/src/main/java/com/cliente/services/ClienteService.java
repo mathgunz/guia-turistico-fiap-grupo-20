@@ -5,7 +5,10 @@ import com.cliente.repositories.entities.ClienteEntity;
 import com.cliente.repositories.entities.ClienteMapper;
 import com.cliente.services.dtos.Cliente;
 import com.cliente.usecases.ClienteUseCase;
+import javassist.NotFoundException;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class ClienteService implements ClienteUseCase {
@@ -16,11 +19,8 @@ public class ClienteService implements ClienteUseCase {
     }
 
     @Override
-    public Cliente getById(Long id) {
-        return clienteRepository.findById(id)
-                .map( optional -> {
-                    return new ClienteMapper().toEntity(optional);
-                }).orElseThrow(() -> new RuntimeException("Cliente não existe"));
+    public Cliente getById(Long id) throws NotFoundException {
+        return clienteRepository.findById(id).map(cliente -> new ClienteMapper().toEntity(cliente)).orElse(null);
     }
 
     @Override
@@ -39,12 +39,16 @@ public class ClienteService implements ClienteUseCase {
         return cliente;
     }
     @Override
-    public ClienteEntity deletar(Long id) {
-        ClienteEntity client = clienteRepository.findById(id).orElseThrow(
-                () -> new RuntimeException("Cliente não existe"));
+    public ClienteEntity deletar(Long id) throws NotFoundException {
 
-        clienteRepository.deleteById(id);
-        return client;
+        Optional<ClienteEntity> client = clienteRepository.findById(id);
+
+        if (client.isEmpty()){
+            return null;
+        }
+
+        clienteRepository.delete(client.get());
+        return client.get();
     }
 
 }
