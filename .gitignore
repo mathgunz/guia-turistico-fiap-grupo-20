@@ -21,10 +21,26 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-/cliente/.gradle/
-/cliente/build/
+
 /.idea/
+.project
+.settings/
+.classpath
+
 /guia/.gradle/
 /guia/build/
+/guia/bin
+
+/cliente/bin
+/cliente/.gradle/
+/cliente/build/
+
+/controle-guia-turistico/bin
 /controle-guia-turistico/build/
 /controle-guia-turistico/.gradle/
+/controle-guia-turistico/.settings/
+/controle-guia-turistico/.project
+/controle-guia-turistico/.classpath
+
+
+
