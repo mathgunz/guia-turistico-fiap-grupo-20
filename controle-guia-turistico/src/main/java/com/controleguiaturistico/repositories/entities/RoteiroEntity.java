@@ -16,7 +16,7 @@ public class RoteiroEntity {
     private Date criacao;
 
     @OneToMany(mappedBy = "roteiro")
-    private List<RoteiroAtracao> atracoes;
+    private List<RoteiroAtracaoEntity> atracoes;
 
     @ManyToOne
     @JoinColumn(name="contratacao_id", nullable=false)
@@ -62,11 +62,11 @@ public class RoteiroEntity {
         this.controle = controle;
     }
 
-    public List<RoteiroAtracao> getAtracoes() {
+    public List<RoteiroAtracaoEntity> getAtracoes() {
         return atracoes;
     }
 
-    public void setAtracoes(List<RoteiroAtracao> atracoes) {
+    public void setAtracoes(List<RoteiroAtracaoEntity> atracoes) {
         this.atracoes = atracoes;
     }
 }
