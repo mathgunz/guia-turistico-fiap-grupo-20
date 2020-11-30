@@ -52,7 +52,7 @@ public class RoteiroService {
 
     public List<RoteiroEntity> findAllByAgendamentoId(Long agendamentoId) {
 
-        List<RoteiroEntity> roteiros = this.roteiroRepository.findAllControleId(agendamentoId);
+        List<RoteiroEntity> roteiros = this.roteiroRepository.findAllByControleId(agendamentoId);
 
         return roteiros;
     }

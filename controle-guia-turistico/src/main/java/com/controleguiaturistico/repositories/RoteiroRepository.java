@@ -9,5 +9,6 @@ import java.util.List;
 
 @Repository
 public interface RoteiroRepository extends JpaRepository<RoteiroEntity, Long> {
-    List<RoteiroEntity> findAllControleId(@Param("agendamentoId") Long agendamentoId);
+
+    List<RoteiroEntity> findAllByControleId(@Param("agendamentoId") Long agendamentoId);
 }
