@@ -19,3 +19,6 @@ criar os schemas no postgre:
 cliente_fiap
 controle_guia_fiap
 guia_fiap
+
+## acessar Swagger
+http://localhost:8080/swagger-ui.html
