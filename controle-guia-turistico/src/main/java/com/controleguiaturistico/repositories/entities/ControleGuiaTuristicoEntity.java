@@ -4,9 +4,9 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-@Entity(name = "contratacaoGuiaTuristico")
-@Table(name = "contratacao_guia_turistico", schema = "contratacao_guia_fiap")
-public class ContratacaoGuiaTuristicoEntity {
+@Entity(name = "controleGuiaTuristico")
+@Table(name = "controle_guia_turistico", schema = "controle_guia_fiap")
+public class ControleGuiaTuristicoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,13 +15,20 @@ public class ContratacaoGuiaTuristicoEntity {
     private ClienteEntity cliente;
     @Embedded
     private GuiaEntity guia;
+    @Temporal(TemporalType.DATE)
     private Date checkin;
+    @Temporal(TemporalType.DATE)
     private Date checkout;
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private ControleGuiaStatus status;
+    @Temporal(TemporalType.DATE)
     private Date criacao;
 
-    @OneToMany(mappedBy = "contratacao")
+    @OneToMany(mappedBy = "controle")
     private List<RoteiroEntity> roteiros;
+
+    public ControleGuiaTuristicoEntity() {
+    }
 
     public Long getId() {
         return id;
@@ -63,11 +70,11 @@ public class ContratacaoGuiaTuristicoEntity {
         this.checkout = checkout;
     }
 
-    public String getStatus() {
+    public ControleGuiaStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(ControleGuiaStatus status) {
         this.status = status;
     }
 

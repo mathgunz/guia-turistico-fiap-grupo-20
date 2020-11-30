@@ -1,5 +1,7 @@
 package com.controleguiaturistico.repositories.entities;
 
+import com.controleguiaturistico.controllers.dtos.GuiaDTO;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
@@ -7,16 +9,28 @@ import javax.persistence.Embeddable;
 public class GuiaEntity {
 
     @Column(name = "guia_id")
-    private String guiaId;
+    private Long id;
     @Column(name = "guia_nome")
     private String nome;
 
-    public String getGuiaId() {
-        return guiaId;
+    public GuiaEntity(GuiaDTO guia) {
+        this.id = guia.getId();
+        this.nome = guia.getNome();
     }
 
-    public void setGuiaId(String guiaId) {
-        this.guiaId = guiaId;
+    public GuiaEntity(Long id) {
+        this.id = id;
+    }
+
+    public GuiaEntity() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
