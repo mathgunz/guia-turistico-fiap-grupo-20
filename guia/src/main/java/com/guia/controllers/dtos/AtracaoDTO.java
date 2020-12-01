@@ -1,49 +1,20 @@
-package com.guia.repositories.entities;
+package com.guia.controllers.dtos;
 
-import com.guia.controllers.dtos.AtracaoDTO;
+import com.guia.repositories.entities.EnderecoEntity;
+import com.guia.repositories.entities.GuiaEntity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
-@Entity(name = "atracao")
-@Table(name="atracao",schema = "guia_fiap")
-public class AtracaoEntity {
+public class AtracaoDTO implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String nome;
     private String descricao;
-
-    @ManyToOne()
-    @JoinColumn(name="guia_id", nullable=false)
     private GuiaEntity guia;
     private String tipo;
     private String publicoAlvo;
     private String valor;
-    @OneToOne
-    @JoinColumn(name = "endereco_id", referencedColumnName = "id")
     private EnderecoEntity endereco;
-
-    public AtracaoEntity() {
-    }
-
-    public AtracaoEntity(GuiaEntity guia, AtracaoDTO atracaoDTO) {
-        this.guia = guia;
-        this.descricao = atracaoDTO.getDescricao();
-        this.endereco = atracaoDTO.getEndereco();
-        this.nome = atracaoDTO.getNome();
-        this.publicoAlvo = atracaoDTO.getPublicoAlvo();
-        this.tipo = atracaoDTO.getTipo();
-        this.valor = atracaoDTO.getValor();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getNome() {
         return nome;

@@ -1,15 +1,9 @@
-package com.guia.repositories.entities;
+package com.guia.controllers.dtos;
 
-import com.guia.controllers.dtos.EnderecoDTO;
+import java.io.Serializable;
 
-import javax.persistence.*;
+public class EnderecoDTO implements Serializable {
 
-@Entity(name = "endereco")
-@Table(name="endereco",schema = "guia_fiap")
-public class EnderecoEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String cep;
     private String cidade;
@@ -17,17 +11,6 @@ public class EnderecoEntity {
     private String endereco;
     private String bairro ;
     private Integer numero;
-
-    public EnderecoEntity(EnderecoDTO endereco) {
-        this.cep = endereco.getCep();
-        this.cidade = endereco.getCidade();
-        this.estado = endereco.getEstado();
-        this.endereco = endereco.getEndereco();
-        this.bairro = endereco.getBairro();
-    }
-
-    public EnderecoEntity() {
-    }
 
     public Long getId() {
         return id;

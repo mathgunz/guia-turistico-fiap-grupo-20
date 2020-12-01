@@ -1,5 +1,7 @@
 package com.guia.repositories.entities;
 
+import com.guia.controllers.dtos.GuiaDTO;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -21,6 +23,17 @@ public class GuiaEntity {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "endereco_id", referencedColumnName = "id")
     private EnderecoEntity endereco;
+
+    public GuiaEntity(GuiaDTO guia) {
+        this.nome = guia.getNome();
+        this.cpf = guia.getCpf();
+        this.email = guia.getEmail();
+        this.telefone = guia.getTelefone();
+        this.endereco = new EnderecoEntity(guia.getEndereco());
+    }
+
+    public GuiaEntity() {
+    }
 
     public Long getId() {
         return id;
