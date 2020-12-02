@@ -1,12 +1,13 @@
 package com.controleguiaturistico.repositories.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 @Entity(name = "controleGuiaTuristico")
 @Table(name = "controle_guia_turistico", schema = "controle_guia_fiap")
-public class ControleGuiaTuristicoEntity {
+public class ControleGuiaTuristicoEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

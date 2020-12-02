@@ -1,12 +1,13 @@
 package com.controleguiaturistico.repositories.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 @Entity(name = "roteiro")
 @Table(name = "roteiro", schema = "controle_guia_fiap")
-public class RoteiroEntity {
+public class RoteiroEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,10 +16,10 @@ public class RoteiroEntity {
     private String descricao;
     private Date criacao;
 
-    @OneToMany(mappedBy = "roteiro")
+    @OneToMany(mappedBy = "roteiro", fetch = FetchType.LAZY)
     private List<RoteiroAtracaoEntity> atracoes;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="contratacao_id", nullable=false)
     private ControleGuiaTuristicoEntity controle;
 

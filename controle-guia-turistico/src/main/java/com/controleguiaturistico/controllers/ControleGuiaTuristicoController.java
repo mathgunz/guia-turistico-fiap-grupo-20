@@ -4,6 +4,7 @@ import com.controleguiaturistico.controllers.dtos.ControleGuiaDTO;
 import com.controleguiaturistico.repositories.entities.ControleGuiaStatus;
 import com.controleguiaturistico.repositories.entities.ControleGuiaTuristicoEntity;
 import com.controleguiaturistico.services.ControleGuiaTuristicoService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @RequestMapping
 @RestController
+@Api(tags = "Contratação de atendimento de um Guia Turistico.")
 public class ControleGuiaTuristicoController {
 
     private final ControleGuiaTuristicoService service;
