@@ -43,7 +43,7 @@ public class ControleGuiaTuristicoService {
 
     public void confirmarAgendamento(Long guiaId, Long agendamentoId) {
 
-        ControleGuiaTuristicoEntity entity = this.repository.findByIdAndGuiaId(guiaId, agendamentoId);
+        ControleGuiaTuristicoEntity entity = this.repository.findByIdAndGuiaId(agendamentoId, guiaId);
 
         entity.setStatus(ControleGuiaStatus.ATENDIMENTO_EM_ANDAMENTO);
 
@@ -51,7 +51,7 @@ public class ControleGuiaTuristicoService {
     }
 
     public ControleGuiaTuristicoEntity findById(Long guiaId, Long agendamentoId) {
-        ControleGuiaTuristicoEntity entity = this.repository.findByIdAndGuiaId(guiaId, agendamentoId);
+        ControleGuiaTuristicoEntity entity = this.repository.findByIdAndGuiaId(agendamentoId, guiaId);
         return entity;
     }
 }

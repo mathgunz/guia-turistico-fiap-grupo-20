@@ -1,10 +1,14 @@
 package com.controleguiaturistico.controllers.dtos;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 
 public class ClienteDTO implements Serializable {
 
+    @ApiModelProperty(value = "Identificação do cliente.", example = "1")
     private Long id;
+    @ApiModelProperty(value = "Nome do cliente.", example = "Matheus")
     private String nome;
 
     public ClienteDTO() {

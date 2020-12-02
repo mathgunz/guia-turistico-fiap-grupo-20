@@ -1,10 +1,14 @@
 package com.controleguiaturistico.controllers.dtos;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 
 public class GuiaDTO implements Serializable {
 
+    @ApiModelProperty(value = "Identificador do guia.", example = "25")
     private Long id;
+    @ApiModelProperty(value = "Nome do guia.", example = "Natalia")
     private String nome;
 
     public GuiaDTO() {

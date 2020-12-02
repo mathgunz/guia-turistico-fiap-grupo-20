@@ -15,5 +15,5 @@ public interface ControleGuiaTuristicoRepository extends JpaRepository<ControleG
     @Query("from controleGuiaTuristico con where con.guia.id = :guiaId and (:status is null or con.status = :status)")
     List<ControleGuiaTuristicoEntity> findAllByGuiaIdAndStatus(@Param("guiaId") Long guiaId, @Param("status") ControleGuiaStatus status);
 
-    ControleGuiaTuristicoEntity findByIdAndGuiaId(@Param("guiaId") Long guiaId, @Param("agendamentoId") Long agendamentoId);
+    ControleGuiaTuristicoEntity findByIdAndGuiaId(Long agendamentoId, Long guiaId);
 }

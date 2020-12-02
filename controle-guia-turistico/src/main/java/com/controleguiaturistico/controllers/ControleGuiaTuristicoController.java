@@ -4,6 +4,7 @@ import com.controleguiaturistico.controllers.dtos.ControleGuiaDTO;
 import com.controleguiaturistico.repositories.entities.ControleGuiaStatus;
 import com.controleguiaturistico.repositories.entities.ControleGuiaTuristicoEntity;
 import com.controleguiaturistico.services.ControleGuiaTuristicoService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +20,7 @@ public class ControleGuiaTuristicoController {
         this.service = service;
     }
 
+    @ApiOperation(value = "Solicitar serviço de um Guia.")
     @PostMapping("agendamentos")
     public ResponseEntity contratar(@RequestBody ControleGuiaDTO controleGuiaDTO) {
 
@@ -27,14 +29,16 @@ public class ControleGuiaTuristicoController {
         return ResponseEntity.ok(controleGuia);
     }
 
+    @ApiOperation(value = "Buscar atendimento do guia.")
     @GetMapping("/guias/{guiaId}/agendamentos/{agendamentoId}")
-    public ResponseEntity contratar(@PathVariable("guiaId") Long guiaId, @PathVariable("agendamentoId") Long agendamentoId) {
+    public ResponseEntity buscarAgendamento(@PathVariable("guiaId") Long guiaId, @PathVariable("agendamentoId") Long agendamentoId) {
 
         ControleGuiaTuristicoEntity controleGuia = this.service.findById(guiaId, agendamentoId);
 
         return ResponseEntity.ok(controleGuia);
     }
 
+    @ApiOperation(value = "Buscar atendimentos do guia.")
     @GetMapping("/guias/{guiaId}/agendamentos")
     public ResponseEntity consultar(@PathVariable("guiaId") Long guiaId,
                                     @RequestParam(value = "status", required = false) ControleGuiaStatus status){
@@ -42,6 +46,7 @@ public class ControleGuiaTuristicoController {
         return ResponseEntity.ok(controle);
     }
 
+    @ApiOperation(value = "Confirmar atendimento do cliente.")
     @PostMapping("/guias/{guiaId}/agendamentos/{agendamentoId}/confirmar")
     public ResponseEntity confirmarAgendamento(@PathVariable("guiaId") Long guiaId, @PathVariable("agendamentoId") Long agendamentoId) {
         this.service.confirmarAgendamento(guiaId, agendamentoId);
