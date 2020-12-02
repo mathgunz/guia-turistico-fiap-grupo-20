@@ -1,5 +1,7 @@
 package com.controleguiaturistico.repositories.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -21,6 +23,7 @@ public class RoteiroEntity implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="contratacao_id", nullable=false)
+    @JsonIgnore
     private ControleGuiaTuristicoEntity controle;
 
     public Long getId() {
@@ -53,10 +56,6 @@ public class RoteiroEntity implements Serializable {
 
     public void setCriacao(Date criacao) {
         this.criacao = criacao;
-    }
-
-    public ControleGuiaTuristicoEntity getControle() {
-        return controle;
     }
 
     public void setControle(ControleGuiaTuristicoEntity controle) {

@@ -1,5 +1,7 @@
 package com.controleguiaturistico.repositories.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -13,8 +15,10 @@ public class RoteiroAtracaoEntity implements Serializable {
     private Long id;
     private Long atracaoId;
     private String nome;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "roteiro_id")
+    @JsonIgnore
     private RoteiroEntity roteiro;
 
     public Long getId() {
@@ -39,10 +43,6 @@ public class RoteiroAtracaoEntity implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public RoteiroEntity getRoteiro() {
-        return roteiro;
     }
 
     public void setRoteiro(RoteiroEntity roteiro) {
