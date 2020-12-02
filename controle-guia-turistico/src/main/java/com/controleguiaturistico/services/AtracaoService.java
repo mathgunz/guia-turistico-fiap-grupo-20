@@ -31,4 +31,9 @@ public class AtracaoService {
 
         return this.atracaoRepository.save(roteiroAtracaoEntity);
     }
+
+    public void deletar(Long roteiroId) {
+        Optional<RoteiroEntity> roteiroEntity = roteiroRepository.findById(roteiroId);
+        this.roteiroRepository.delete(roteiroEntity.get());
+    }
 }

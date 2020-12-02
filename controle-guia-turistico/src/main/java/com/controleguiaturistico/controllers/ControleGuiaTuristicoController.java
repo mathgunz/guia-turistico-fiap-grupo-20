@@ -40,6 +40,15 @@ public class ControleGuiaTuristicoController {
         return ResponseEntity.ok(controleGuia);
     }
 
+    @ApiOperation(value = "Deletar atendimento do guia.")
+    @DeleteMapping("/guias/{guiaId}/agendamentos/{agendamentoId}")
+    public ResponseEntity deletarAgendamento(@PathVariable("guiaId") Long guiaId, @PathVariable("agendamentoId") Long agendamentoId) {
+
+        this.service.deletar(guiaId, agendamentoId);
+
+        return ResponseEntity.ok().build();
+    }
+
     @ApiOperation(value = "Buscar atendimentos do guia.")
     @GetMapping("/guias/{guiaId}/agendamentos")
     public ResponseEntity consultar(@PathVariable("guiaId") Long guiaId,

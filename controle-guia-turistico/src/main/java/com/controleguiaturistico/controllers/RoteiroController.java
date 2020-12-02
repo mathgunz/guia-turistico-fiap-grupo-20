@@ -49,4 +49,12 @@ public class RoteiroController {
         return ResponseEntity.ok(atracao);
     }
 
+    @ApiOperation(value = "Deletar roteiro.")
+    @DeleteMapping("agendamentos/{agendamentoId}/roteiros/{roteiroId}")
+    public ResponseEntity deletarRoteiro(
+            @PathVariable("agendamentoId") Long agendamentoId,
+            @PathVariable("roteiroId") Long roteiroId){
+        this.atracaoService.deletar(roteiroId);
+        return ResponseEntity.ok().build();
+    }
 }

@@ -54,4 +54,9 @@ public class ControleGuiaTuristicoService {
         ControleGuiaTuristicoEntity entity = this.repository.findByIdAndGuiaId(agendamentoId, guiaId);
         return entity;
     }
+
+    public void deletar(Long guiaId, Long agendamentoId) {
+        ControleGuiaTuristicoEntity entity = this.repository.findByIdAndGuiaId(agendamentoId, guiaId);
+        this.repository.delete(entity);
+    }
 }
