@@ -2,18 +2,26 @@ package com.guia.controllers.dtos;
 
 import com.guia.repositories.entities.EnderecoEntity;
 import com.guia.repositories.entities.GuiaEntity;
+import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 public class AtracaoDTO implements Serializable {
 
+    @ApiModelProperty(value = "Nome da Atração", example = "Ibirapuera")
     private String nome;
+    @ApiModelProperty(value = "Descrição da Atração", example = "Parque Ibirapuera está localizado na zona sul de SP")
     private String descricao;
+    @ApiModelProperty(value = "Guia responsavel da Atração", example = "Fernando Souza")
     private GuiaEntity guia;
+    @ApiModelProperty(value = "Tipo de Atração", example = "Natureza e Diversao")
     private String tipo;
+    @ApiModelProperty(value = "Publico alvo da Atração", example = "Ideal para todas as idades")
     private String publicoAlvo;
+    @ApiModelProperty(value = "Valor da Atração", example = "10 reais")
     private String valor;
+    @ApiModelProperty(value = "Endereço da Atração", example = "Avenida 23 de maio-SP")
     private EnderecoEntity endereco;
 
     public String getNome() {
