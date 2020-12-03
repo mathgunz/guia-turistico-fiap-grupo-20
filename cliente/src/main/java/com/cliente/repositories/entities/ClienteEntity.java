@@ -1,5 +1,7 @@
 package com.cliente.repositories.entities;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 
 @Entity(name = "cliente")
@@ -9,12 +11,17 @@ public class ClienteEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @ApiModelProperty(value = "Nome do Cliente.", example = "Thais")
     private String nome;
+    @ApiModelProperty(value = "CPF do Cliente.", example = "363760768-10")
     private String cpf;
+    @ApiModelProperty(value = "Telefone do Cliente.", example = "11964566300")
     private Long telefone;
+    @ApiModelProperty(value = "E-mail do Cliente.", example = "thais-teste@gmail.com")
     private String email;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "endereco_id", referencedColumnName = "id")
+    @ApiModelProperty(value = "Endereço do Cliente.")
     private EnderecoEntity endereco;
 
 

@@ -1,5 +1,7 @@
 package com.cliente.repositories.entities;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 
 @Entity(name = "endereco")
@@ -8,12 +10,21 @@ public class EnderecoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @ApiModelProperty(value = "CEP do Cliente.", example = "05588-000")
     private String cep;
+    @ApiModelProperty(value = "Cidade do Cliente.", example = "São Paulo")
     private String cidade;
+    @ApiModelProperty(value = "Estado do Cliente.", example = "SP")
     private String estado;
+    @ApiModelProperty(value = "Endereço do Cliente.", example = "Avenida Brasil")
     private String endereco;
+    @ApiModelProperty(value = "Bairro do Cliente.", example = "Jd. Esmeralda")
     private String bairro ;
+    @ApiModelProperty(value = "Número da casa.", example = "25")
     private Integer numero;
+
+    public EnderecoEntity() {
+    }
 
     public EnderecoEntity(Long id, String cep, String cidade, String estado, String endereco, String bairro, Integer numero) {
         this.id = id;
