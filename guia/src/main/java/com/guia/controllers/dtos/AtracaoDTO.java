@@ -13,15 +13,15 @@ public class AtracaoDTO implements Serializable {
     private String nome;
     @ApiModelProperty(value = "Descrição da Atração", example = "Parque Ibirapuera está localizado na zona sul de SP")
     private String descricao;
-    @ApiModelProperty(value = "Guia responsavel da Atração", example = "Fernando Souza")
+    @ApiModelProperty(value = "Dados do guia que obtem a atração.")
     private GuiaEntity guia;
     @ApiModelProperty(value = "Tipo de Atração", example = "Natureza e Diversao")
     private String tipo;
     @ApiModelProperty(value = "Publico alvo da Atração", example = "Ideal para todas as idades")
     private String publicoAlvo;
-    @ApiModelProperty(value = "Valor da Atração", example = "10 reais")
+    @ApiModelProperty(value = "Valor da Atração", example = "10")
     private String valor;
-    @ApiModelProperty(value = "Endereço da Atração", example = "Avenida 23 de maio-SP")
+    @ApiModelProperty(value = "Endereço do guia que obtem a atração.")
     private EnderecoEntity endereco;
 
     public String getNome() {

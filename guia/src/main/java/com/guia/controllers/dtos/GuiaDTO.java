@@ -6,8 +6,6 @@ import java.io.Serializable;
 
 public class GuiaDTO implements Serializable {
 
-
-    @ApiModelProperty(value = "Identificador do Guia ", example = "1")
     private Long id;
 
     @ApiModelProperty(value = "Nome Completo do Guia ", example = "Fernado Souza Aguiar")
@@ -16,13 +14,12 @@ public class GuiaDTO implements Serializable {
     @ApiModelProperty(value = "CPF do Guia", example = "39956471254")
     private String cpf;
 
-    @ApiModelProperty(value = "E-mail do guia", example = "fernando@guia.com.br")
+    @ApiModelProperty(value = "E-mail do Guia", example = "fernando@guia.com.br")
     private String email;
 
-    @ApiModelProperty(value = "Telefone do guia", example = "11954741254")
+    @ApiModelProperty(value = "Telefone do Guia", example = "11954741254")
     private Long telefone;
 
-    @ApiModelProperty(value = "Endereço do guia", example = "Avenida Paulista")
     private EnderecoDTO endereco;
 
     public Long getId() {
