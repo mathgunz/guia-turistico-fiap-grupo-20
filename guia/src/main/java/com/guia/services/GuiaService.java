@@ -6,6 +6,7 @@ import com.guia.repositories.entities.GuiaEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.List;
 
 @Service
 public class GuiaService {
@@ -45,5 +46,10 @@ public class GuiaService {
 
         this.repository.delete(guiaEntityOptional.get());
         return true;
+    }
+
+    public List<GuiaEntity> buscarPorCidade(String nome){
+
+        return null;
     }
 }

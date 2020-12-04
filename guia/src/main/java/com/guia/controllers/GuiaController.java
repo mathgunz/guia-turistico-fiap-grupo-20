@@ -46,6 +46,16 @@ public class GuiaController {
         return ResponseEntity.ok(guiaEntity);
     }
 
+    @ApiOperation(value = "Buscar guias por cidade"
+            , notes = "Operação para buscar guias por cidade")
+    @GetMapping
+    public ResponseEntity buscarPorCidade(@RequestParam("cidade") String cidade){
+
+        List<GuiaEntity> guiaEntity = service.buscarPorCidade(cidade);
+
+        return ResponseEntity.ok(guiaEntity);
+    }
+
     @ApiOperation(value = "Atualizar informações do guia"
             , notes = "Operação para atualizar informações do guia por id")
     @PutMapping("{id}")
