@@ -27,12 +27,9 @@ public class SwaggerConfig {
     }
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Guias Turisticos")
+                .title("Guias Turisticos.")
                 .description("API para CRUD de Guias e atrações turisticas")
-                .version("1.0.0")
-                .license("Apache License Version 2.0")
-                .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")
-                        .contact(new Contact("Travel Roots", "https://travelroots.com.br", "travelroots@travelroots.com.br"))
-                        .build();
+                .contact(new Contact("Travel Roots", "https://travelroots.com.br", "travelroots@travelroots.com.br"))
+                .build();
     }
 }
