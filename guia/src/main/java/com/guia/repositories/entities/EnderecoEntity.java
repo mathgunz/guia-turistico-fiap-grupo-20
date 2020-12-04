@@ -24,6 +24,7 @@ public class EnderecoEntity {
         this.estado = endereco.getEstado();
         this.endereco = endereco.getEndereco();
         this.bairro = endereco.getBairro();
+        this.numero = endereco.getNumero();
     }
 
     public EnderecoEntity() {

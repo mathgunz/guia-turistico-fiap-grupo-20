@@ -1,14 +1,25 @@
 package com.guia.controllers.dtos;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 
 public class GuiaDTO implements Serializable {
 
     private Long id;
+
+    @ApiModelProperty(value = "Nome Completo do Guia ", example = "Fernado Souza Aguiar")
     private String nome;
+
+    @ApiModelProperty(value = "CPF do Guia", example = "39956471254")
     private String cpf;
+
+    @ApiModelProperty(value = "E-mail do Guia", example = "fernando@guia.com.br")
     private String email;
+
+    @ApiModelProperty(value = "Telefone do Guia", example = "11954741254")
     private Long telefone;
+
     private EnderecoDTO endereco;
 
     public Long getId() {

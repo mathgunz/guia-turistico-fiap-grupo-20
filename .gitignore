@@ -23,21 +23,9 @@
 hs_err_pid*
 
 /.idea/
-.project
-.settings/
-.classpath
-
-/guia/.gradle/
-/guia/build/
-/guia/bin
-
-/cliente/bin
+/controle-guia-turistico/.gradle/
+/controle-guia-turistico/build/
 /cliente/.gradle/
 /cliente/build/
-
-/controle-guia-turistico/bin
-/controle-guia-turistico/build/
-/controle-guia-turistico/.gradle/
-/controle-guia-turistico/.settings/
-/controle-guia-turistico/.project
-/controle-guia-turistico/.classpath
+/guia/.gradle/
+/guia/build/
