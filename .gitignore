@@ -29,3 +29,16 @@ hs_err_pid*
 /cliente/build/
 /guia/.gradle/
 /guia/build/
+/cliente/.settings/
+/cliente/.classpath
+/cliente/.project
+/cliente/bin/
+/controle-guia-turistico/.settings/
+/controle-guia-turistico/.classpath
+/controle-guia-turistico/.project
+/controle-guia-turistico/bin/
+/guia/.settings/
+/guia/.classpath
+/guia/.project
+/guia/bin/
+

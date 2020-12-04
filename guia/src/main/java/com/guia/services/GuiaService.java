@@ -49,7 +49,9 @@ public class GuiaService {
     }
 
     public List<GuiaEntity> buscarPorCidade(String nome){
+    	
+     	List<GuiaEntity> list = this.repository.findAllByEnderecoCidade(nome);
 
-        return null;
+        return list;
     }
 }
