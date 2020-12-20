@@ -47,6 +47,6 @@ docker pull mathgunz16/guia_image:latest
 CONTROLE-GUIA-TURISTICO
 
 docker build . -t controle-guia-turistico-image
-docker tag guia_image:latest mathgunz16/controle-guia-turistico-image:latest
+docker tag controle-guia-turistico-image:latest mathgunz16/controle-guia-turistico-image:latest
 docker push mathgunz16/controle-guia-turistico-image:latest
 docker pull mathgunz16/controle-guia-turistico-image:latest
