@@ -1,5 +1,30 @@
 version: '3.3'
 
 services:
-  db:
-    image:
+
+  postgres-fiap-final:
+    image: mathgunz16/postgres-fiap-final-image:latest
+    restart: always
+    container_name: postgres-fiap-final
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: 1234
+    networks:
+      - backend
+
+  cliente-fiap:
+    image: mathgunz16/cliente_image:latest
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres-fiap-final
+    networks:
+      - backend
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-fiap-final:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=1234
+
+networks:
+  backend:

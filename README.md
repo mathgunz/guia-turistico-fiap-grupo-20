@@ -22,3 +22,16 @@ guia_fiap
 
 ## acessar Swagger
 http://localhost:8080/swagger-ui.html
+
+
+
+
+-- realizar build
+
+-CLIENTE
+
+docker build . -t cliente_image
+docker tag cliente_image:latest mathgunz16/cliente_image:latest
+docker push mathgunz16/cliente_image:latest
+docker pull mathgunz16/cliente_image:latest
+
