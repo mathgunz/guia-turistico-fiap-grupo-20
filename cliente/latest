@@ -1,0 +1,5 @@
+Using default tag: latest
+latest: Pulling from mathgunz16/cliente_image
+Digest: sha256:d2149fc701df73add9049ecc236f255bd6a0591202e11c6cc6cfe352129fd1af
+Status: Image is up to date for mathgunz16/cliente_image:latest
+docker.io/mathgunz16/cliente_image:latest
