@@ -28,10 +28,25 @@ http://localhost:8080/swagger-ui.html
 
 -- realizar build
 
--CLIENTE
+CLIENTE
 
 docker build . -t cliente_image
 docker tag cliente_image:latest mathgunz16/cliente_image:latest
 docker push mathgunz16/cliente_image:latest
 docker pull mathgunz16/cliente_image:latest
 
+
+GUIA
+
+docker build . -t guia_image
+docker tag guia_image:latest mathgunz16/guia_image:latest
+docker push mathgunz16/guia_image:latest
+docker pull mathgunz16/guia_image:latest
+
+
+CONTROLE-GUIA-TURISTICO
+
+docker build . -t controle-guia-turistico-image
+docker tag guia_image:latest mathgunz16/controle-guia-turistico-image:latest
+docker push mathgunz16/controle-guia-turistico-image:latest
+docker pull mathgunz16/controle-guia-turistico-image:latest

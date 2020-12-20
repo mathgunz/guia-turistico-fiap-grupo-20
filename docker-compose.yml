@@ -26,5 +26,31 @@ services:
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=1234
 
+  controle-guia-turistico-fiap:
+    image: mathgunz16/controle-guia-turistico-image:latest
+    ports:
+      - 8081:8081
+    depends_on:
+      - postgres-fiap-final
+    networks:
+      - backend
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-fiap-final:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=1234
+
+  guia-fiap:
+    image: mathgunz16/guia-image:latest
+    ports:
+      - 8082:8082
+    depends_on:
+      - postgres-fiap-final
+    networks:
+      - backend
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-fiap-final:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=1234
+
 networks:
   backend:
